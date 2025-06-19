@@ -60,12 +60,12 @@
         {
           "anchor": "Qui Studio",
           "href": "https://www.qui.is",
-          "icon": "book-open-cover"
+          "icon": "square-dashed-mouse-pointer"
         },
         {
           "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
+          "href": "https://discord.gg/CxhaU9Q5",
+          "icon": "messages-square"
         },
         {
           "anchor": "Blog",
