@@ -58,8 +58,8 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
+          "anchor": "Qui Studio",
+          "href": "https://www.qui.is",
           "icon": "book-open-cover"
         },
         {
@@ -69,7 +69,7 @@
         },
         {
           "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
+          "href": "https://www.qui.is/blog",
           "icon": "newspaper"
         }
       ]
@@ -83,20 +83,20 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:hello@qui.is"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "href": "https://dashboard.qui.is"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/qui_studio",
+      "github": "https://github.com/quistudio",
+      "linkedin": "https://linkedin.com/company/qui-intelligence"
     }
   }
 }
