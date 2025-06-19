@@ -22,7 +22,7 @@
             ]
           },
           {
-            "group": "agents",
+            "group": "Agent Management",
             "pages": [
               "agents/roles",
               "agents/models",
@@ -33,7 +33,7 @@
             ]
           },
           {
-            "group": "workflows",
+            "group": "Workflow Management",
             "pages": [
               "workflows/setup",
               "workflows/nodes",
