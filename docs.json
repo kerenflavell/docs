@@ -69,16 +69,6 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Qui Studio",
-          "href": "https://www.qui.is",
-          "icon": "square-dashed-mouse-pointer"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://discord.gg/CxhaU9Q5",
-          "icon": "messages-square"
-        },
-        {
           "anchor": "Blog",
           "href": "https://www.qui.is/blog",
           "icon": "newspaper"
