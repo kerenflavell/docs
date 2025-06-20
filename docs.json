@@ -37,8 +37,6 @@
             "pages": [
               "workflows/setup",
               "workflows/nodes",
-              "workflows/connectors",
-              "workflows/settings",
               "workflows/monitoring",
               "workflows/help"
             ]
@@ -50,6 +48,7 @@
         "groups": [
           {
             "group": "API Documentation",
+            "hidden": true,
             "pages": [
               "api-reference/introduction"
             ]

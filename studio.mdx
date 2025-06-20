@@ -1,94 +1,133 @@
 ---
-title: "Studio Elements"
+title: "Qui Studio Elements"
 description: "Get an overview of the important components of Qui Studio"
 icon: "activity"
 ---
 
-# Chat Area
+# Complete Interface Overview
 
-The main window for active dialogue with one or more agents.
+### Chat Area — _your communication hub_
 
-Multiple threads can be used to hold more than one conversation.
+The Chat Area is mission control for every AI conversation in **Qui Studio**.
 
-Set the Routing to dictate how the agents interact with you and each other.
+**Core purposes**
 
-# AutoThink Canvas
+- **Multi-agent orchestration** – talk to several characters at once
+- **Real-time collaboration** – watch agents think together live
+- **Persistent context** – rich history with memory recall
+- **Workflow links** – jump from chat straight into AutoThink Canvas
 
-# Character Management
+**Thread manager**
 
-# Dashboard
+| What you can do      | Why it helps                             |
+| :------------------- | :--------------------------------------- |
+| Run parallel threads | Keep projects or topics separate         |
+| Drag-to-reorder      | Prioritise urgent chats                  |
+| Per-thread models    | Tune each conversation’s AI mix          |
+| Context isolation    | No spill-over unless you connect threads |
 
-Displays all the relevant info.
+**Routing options**
 
-\>\>\> Is there double ups or confusion with Settings, Statistics
+- **Direct** – `@Analyst` gets the question
+- **Broadcast** – send to many for brainstorms
+- **Hierarchical** – message climbs Seer → Director → … Assistant
+- **Round-robin** – each character replies in turn
+- **Smart** – Qui Studio chooses the best character automatically
 
-# Terminal
+**Real-time features**
 
-Secure Terminal Integration 
+- Live streaming with _Stop_ button
+- `@mentions` between characters
+- Drag-and-drop file uploads with auto-processing
+- Priority queue so time-critical messages jump the line
 
-- AI Command Execution: LLMs can execute terminal commands securely
-- 3 Security Modes: Strict, read-only, full-access with granular controls
-- Real-time Output Streaming: Terminal output displayed in real-time
-- Multi-layer Safety: Command filtering, path restrictions, resource limits
+**Advanced chat controls**
 
-  Connection Monitor System
+| Control             | Use-case                                               |
+| :------------------ | :----------------------------------------------------- |
+| **Edit / retry**    | Refine a prompt or regenerate an answer                |
+| **Branch**          | Explore “what-if” paths without losing the main thread |
+| **Export / import** | Save or reload entire conversations                    |
+| **Snapshots**       | Bookmark key decision points                           |
 
-- Progressive Escalation: Warning → Intervention → Blocking
-- @Mention-based Interventions: Automatic escalation through AI hierarchy
-- Real-time Monitoring: Live oversight of AI-to-AI communications
+### AutoThink Canvas — _visual workflow builder_
 
-API Key Encryption System
+- Drag-and-drop 15 \+ node types (Start, Loop, Monitor, Decision, …)
+- Handle-based connections with live validation
+- **Strategy Sequencer** for per-iteration reasoning control
+- Live execution view, logs and status colours
+- Save any setup as a reusable template
 
-- Production-ready Fernet Encryption: AES-128 \+ HMAC authentication
-- Automatic Migration: Seamless upgrade from plain text to encrypted
-- Environment-based Key Management: Secure persistent encryption
+### Character Management — _AI agent HQ_
 
-# Console
+- Create/edit characters with role, personality, capabilities
+- MetaLayers roles: _Seer · Director · Supervisor · Executor · Assistant_
+- Configure memory bands, terminal & web access, M2M settings
+- Assign AutoThink strategies for advanced reasoning
 
-Tracks the actions. View to 
+### Dashboard — _system-wide analytics_
 
-# Editor
+- Active characters & running workflows
+- RAM / CPU / token usage and costs
+- Per-character performance metrics
+- Health indicators & error alerts
 
-- Files supported
-- Editing
-- Save
-- Save As
-- Copy
-- Editor settings
-  - Auto save
-  - Font size
+### Terminal — _secure command runner_
 
-## File Manager
+Three modes: **Strict · Read-only · Full**
 
-- View folders and files
-- Create new file
-- Create new folder
+- Whitelist / blacklist commands, path sandbox, resource limits
+- Live output streaming, full audit trail
 
-## Session Manager
+### Connection Monitor — _AI-to-AI oversight_
 
-- Restore previous discussions
-- Start a new session that has 0 messages
+- Tracks every message, detects loops, measures quality
+- Escalates conflicts up the hierarchy automatically
+- Warning → Intervention → Blocking phases
 
-## Settings
+### API-key encryption
 
-- Settings
-  - User Settings
-    - Your profile name
-  - Session Settings
-    - Can set a limit
-      - Why?
-  - Message depth
-    - Maximum chain depth
-  - MetaLayers
-    - Need to understand how it works before setting automation
-  - Memory Statistics
-  - Token and Costs
-    - Global token limit
-    - Export CSV
-  - Character Cleanup
-    - Is there a backup if they delete?
+Production-grade Fernet (AES-128 \+ HMAC) with zero-knowledge storage, key rotation and environment separation.
+
+### Console — _system logs_
+
+Searchable, filterable, exportable logs for user actions, system events and errors.
+
+### Editor & File Manager
+
+- Code/text editor with syntax-highlighting for 50 \+ languages
+- Tree-view file browser, previews, bookmarks
+- One-click send to Chat, Canvas, Terminal or Knowledge nodes
+
+### Session Manager
+
+Restore, branch, export or template entire chat sessions; automatic and manual snapshots keep state safe.
+
+### Settings
+
+- **User** – profile, notifications, accessibility, 2FA
+- **Session** – depth / timeout / autosave limits
+- **System** – role hierarchy, memory bands, global token caps, performance tuning
+
+### Statistics & Analytics
+
+Memory usage, compression efficiency, token spend, character performance, budget alerts – all exportable to CSV.
+
+### Character Cleanup & Backup
+
+Detect inactive agents, bulk archive or delete (with dependency checks), automatic backups and version history.
 
 ### Emergency Stop
 
-- Given there’s automation setups there might be the need to shutdown the automations quickly. This is the best tool
-- Consequences
+Immediate or graceful halt – system-wide or scoped to characters, workflows or sessions – with guided recovery steps.
+
+### Unified experience
+
+Every module talks to the rest:
+
+- Launch workflows from chat
+- Terminal commands from Canvas
+- Files shared across Chat, Editor, Knowledge nodes
+- Live state sync everywhere & unified notifications
+
+> **Qui Studio** combines the simplicity of chat with professional-grade workflow orchestration, giving you full visibility and control over every part of your AI operations.
