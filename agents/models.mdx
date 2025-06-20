@@ -1,13 +1,54 @@
 ---
 title: "Model Selection"
-description: "Description of your new file."
+description: "Selection of Large Language Models for agent roles"
 icon: "activity"
 ---
 
-# Available models
+#### Available LLM models in Qui Studio
 
-The following LLMs (Large Language Models) can be used in Qui Studio.
+| Provider      | Model (ID)                        | Context window | Price / 1 M tokens (in ∑)         | Typical strengths                           | Current usage                                                         |
+| :------------ | :-------------------------------- | :------------- | :-------------------------------- | :------------------------------------------ | :-------------------------------------------------------------------- |
+| **Anthropic** | Claude 3.5 **Sonnet**(2024-10-22) | 200 k          | **3 \$** input · **15 \$** output | Balanced speed \+ reasoning, code analysis  | Default for most Assistants, Directors, Supervisors, Seers, Executors |
+|               | Claude 3.5 **Sonnet**(2024-06-20) | 200 k          | 3 \$ · 15 \$                      | Advanced reasoning with terminal access     | High-capability Assistants (e.g. Harrold)                             |
+|               | Claude 3 **Opus** (2024-02-29)    | 200 k          | **15 \$** · **75 \$**             | _Maximum_ reasoning depth, complex analysis | Premium strategic characters                                          |
+|               | Claude 3 **Haiku** (2024-03-07)   | 200 k          | **0.25 \$** · **1.25 \$**         | Fast & low-cost, high-volume flows          | Economical Executors / bulk tasks                                     |
+| **OpenAI**    | GPT-4 **Turbo**                   | 128 k          | **10 \$** · **30 \$**             | Complex reasoning, code generation          | General high-capability roles                                         |
+|               | **GPT-4**                         | 128 k          | **30 \$** · **60 \$**             | Top quality when cost is secondary          | Select premium tasks                                                  |
+|               | **GPT-4o**                        | 128 k          | **5 \$** · **15 \$**              | Multimodal, good price/perf                 | Supervisors & Assistants                                              |
+|               | GPT-4o **Mini**                   | 128 k          | **0.15 \$** · **0.60 \$**         | Very low cost, high volume                  | Budget Executors                                                      |
+|               | **GPT-3.5 Turbo**                 | 16 k           | **0.50 \$** · **1.50 \$**         | Basic tasks on tight budgets                | Lightweight Assistants/Executors                                      |
 
-# Compatibility to roles
+### Model recommendations by role
 
-Your goal will be to match the model to the activity to achieve the best results for the lowest token count.
+| Role           | Recommended models                           | Why                                                        |
+| :------------- | :------------------------------------------- | :--------------------------------------------------------- |
+| **Seer**       | Claude 3 Opus · Claude 3.5 Sonnet            | Highest reasoning \+ 200 k context for bands 0-4.99        |
+| **Director**   | Claude 3.5 Sonnet · GPT-4 Turbo              | Strong meta-coordination, balanced cost                    |
+| **Supervisor** | Claude 3.5 Sonnet · GPT-4o                   | Good reasoning for QA; economical                          |
+| **Assistant**  | Claude 3.5 Sonnet · GPT-4o · GPT-4 Turbo     | User-facing versatility \+ optional terminal/code strength |
+| **Executor**   | Claude 3 Haiku · GPT-4o Mini · GPT-3.5 Turbo | Temporary, high-volume tasks → lowest viable cost          |
+
+### Selection guidelines by use case
+
+- **Development & terminal work** → **Claude 3.5 Sonnet**\
+  Great at code, debugging, large codebases, and terminal integration.
+- **Research & deep analysis** → **Claude 3 Opus** or **GPT-4 Turbo**\
+  Premium reasoning and large context for extensive literature or data review.
+- **High-volume workflows** → **Claude 3 Haiku** or **GPT-4o Mini**\
+  Rapid responses at penny-level prices; perfect for bulk Executor runs.
+- **Budget-conscious deployments** → **GPT-3.5 Turbo** or **Claude 3 Haiku**\
+  Cheapest token rates for straightforward Q&A or routine assistance.
+- **Multimodal (images \+ text)** → **GPT-4o** (or Turbo)\
+  Native vision support with solid reasoning.
+
+### Cost-optimization playbook
+
+1. **Hybrid tiering**
+   - _Premium_ (Seer / Director): Claude Opus, GPT-4
+   - _Balanced_ (Supervisor / Assistant): Claude 3.5 Sonnet, GPT-4o
+   - _Economy_ (Executor): Claude Haiku, GPT-4o Mini
+2. **Context sizing**
+   - Choose **Claude (200 k)** for memory-heavy roles.
+   - Use **GPT (128 k)** where smaller context suffices.
+
+**Tip:** Qui Studio auto-discovers new provider models as they launch, so you can upgrade characters later without touching your existing role configs or hierarchies.
