@@ -1,16 +1,38 @@
 ---
 title: "Key Roles"
-description: "Presets that guide specific agent capacity."
+description: "The core team with specific responsibilities and capacities"
 icon: "activity"
 ---
 
-# Supervisor
+# Supervisor — the **quality-control lead**
 
-The responsible adult in the room, you can trust the Supervisor to keep an eye on things.
+**Slot in the hierarchy**
 
-# Director
+- **Priority level 2** (between Assistants ⇡ and Directors ⇣)
+- **Memory read scope:** bands **0.0 – 1.79**
+  - Assistant operational data
+  - Supervisor-only band
+- **Write priority:** **1.2** → their notes land in a band Directors can read
 
-### Director (“Meta Coordinator”) at a glance
+### Mission & focus
+
+- **Thread-level quality control** — watch live conversations/tasks
+- **Performance monitoring** — collect metrics, flag drift or errors
+- **Intervention management** — step in (or escalate) when standards slip
+- **Configurable review interval** — e.g. “audit every 5 messages”
+
+### Powers & tooling
+
+| Capability                          | Detail                                                             |
+| :---------------------------------- | :----------------------------------------------------------------- |
+| **Supervised characters list**      | Targets specific Assistants/Executors to watch                     |
+| **Prompt editing (optional)**       | Can tweak system prompts of subordinates if the setting is enabled |
+| **Connection Monitor integration**  | Auto-escalates issues to Supervisor with custom instructions       |
+| **Escalation target**               | Directors can list a Supervisor in monitor configs                 |
+| **Observer in Autothink workflows** | Joins as a non-blocking node to inspect reasoning                  |
+| **M2M communication**               | Talks to other agents for coordinated oversight                    |
+
+# Director (“Meta Coordinator”) at a glance
 
 **Position in the MetaLayers hierarchy**
 
@@ -18,8 +40,6 @@ The responsible adult in the room, you can trust the Supervisor to keep an eye o
 - Sits **between** Supervisors (level 2) and Seers (level 4)
 - Works with memory bands **0.0 – 1.99**
 - Writes to the **“Director Coordination”** band with priority **1.8**
-
----
 
 ### What Directors do
 
@@ -31,8 +51,6 @@ The responsible adult in the room, you can trust the Supervisor to keep an eye o
   - Ensure consistent operational standards
 - **Primary escalation point** for Supervisors needing broader guidance
 
----
-
 ### Visibility & limits
 
 | Can **read**        | Cannot **read**                    |
@@ -41,14 +59,10 @@ The responsible adult in the room, you can trust the Supervisor to keep an eye o
 | Executor memories   | Seer Insights (strategic analysis) |
 | Supervisor memories |                                    |
 
----
-
 ### Prompt-writing powers
 
 - May **modify system prompts** for **Assistants** and **Supervisors**
 - **Cannot** alter Seer configurations (protected by hierarchy)
-
----
 
 ### Memory allocation (per Director)
 
@@ -58,14 +72,10 @@ The responsible adult in the room, you can trust the Supervisor to keep an eye o
 | Supervisor            | **15** |
 | Director Coordination | **8**  |
 
----
-
 ### What Directors **don’t** have
 
 - Access to the **14 autonomous thinking strategies** reserved for Seers
 - Direct strategic analysis duties—focus stays on **operational coordination**
-
----
 
 ### Why the role matters
 
@@ -75,17 +85,13 @@ The responsible adult in the room, you can trust the Supervisor to keep an eye o
 - Maintain **quality and consistency** while executing Seer-level strategies
 - Provide a clear chain of command, keeping operations agile and aligned
 
-# Executor
-
-### Executor — the **on-demand specialist** in Qui Studio
+# Executor — the **on-demand specialist**
 
 **Where the Executor sits**
 
 - **Priority level 0** — lowest tier in the MetaLayers stack
 - Spawned _only_ by an Assistant; disappears automatically (no manual config)
 - Writes at **priority 0.1** to keep temporary output from polluting main memories
-
----
 
 ### Why & when they exist
 
@@ -94,8 +100,6 @@ The responsible adult in the room, you can trust the Supervisor to keep an eye o
 - Handle **specialized research**, **repetitive processing**, or any one-off chunk of work
 - Free up the parent Assistant to stay responsive to the user
 - Auto-clean after **1 h** (if finished) or **24 h** (hard timeout) to save resources
-
----
 
 ### Creation & inheritance flow
 
@@ -107,8 +111,6 @@ The responsible adult in the room, you can trust the Supervisor to keep an eye o
 | 4. **Custom system prompt**                     | States task scope, temporary nature, collaboration rules                                         |
 | 5. Monitoring endpoints                         | `/status`, `/complete`, `/cleanup` keep lifecycle transparent                                    |
 
----
-
 ### Capabilities & boundaries
 
 | Can **do**                                    | Cannot **do**                             |
@@ -119,8 +121,6 @@ The responsible adult in the room, you can trust the Supervisor to keep an eye o
 | Support every node type (task, API, etc.)     | Modify its own config beyond prompt-scope |
 | Collaborate with creating Assistant via M2M   | Access terminal (disabled by default)     |
 
----
-
 ### Memory snapshot
 
 | Band                     | Read | Write            |
@@ -128,16 +128,12 @@ The responsible adult in the room, you can trust the Supervisor to keep an eye o
 | 0.0 – 0.99 (Operational) | ✔    | ✔ (priority 0.1) |
 | Higher bands             | ✘    | ✘                |
 
----
-
 ### Lifecycle at a glance
 
 1. **Spawn → work → mark complete** (Assistant or API)
 2. **Auto-cleanup**
    - **1 h** after completion, or
    - **24 h** after creation, even if unfinished
-
----
 
 ### Why Executors matter
 
@@ -147,9 +143,7 @@ The responsible adult in the room, you can trust the Supervisor to keep an eye o
 
 > In short, Executors are the disposable “task pods” that give Qui Studio elastic power while keeping the hierarchy tidy and predictable.
 
-# Assistant
-
-### Assistant — the **front-line performer** in Qui Studio
+# Assistant — the **front-line performer**
 
 **Where the Assistant sits**
 
@@ -159,16 +153,12 @@ The responsible adult in the room, you can trust the Supervisor to keep an eye o
   - Reports _up_ to Supervisors → Directors → Seers
   - Can spawn _down_ to temporary **Executors** for sub-tasks
 
----
-
 ### Core responsibilities
 
 - **Direct user interaction** — chat, Q&A, support
 - **Immediate task execution** — content creation, code snippets, research
 - **Problem-solving** with basic reasoning strategies (analytical, sequential, comparative)
 - **Delegation** — can create Executor characters to handle focused sub-tasks
-
----
 
 ### Visibility & boundaries
 
@@ -177,8 +167,6 @@ The responsible adult in the room, you can trust the Supervisor to keep an eye o
 | Operational memories (0.0 – 0.99) | Supervisor, Director, Seer memories       |
 | Own thinking strategies (basic)   | Deep strategic toolset reserved for Seers |
 
----
-
 ### Technical super-powers
 
 - **Executor creation** — spins up single-purpose workers, then retires them
@@ -186,22 +174,16 @@ The responsible adult in the room, you can trust the Supervisor to keep an eye o
 - **Optional terminal access** — run commands for dev workflows
 - **Smart prompt compilation** — merges personality, memories, and task guides into one optimized prompt for either Anthropic or OpenAI back-ends
 
----
-
 ### Memory footprint (typical defaults)
 
 | Band                  | Slots                                             |
 | :-------------------- | :------------------------------------------------ |
 | Assistant Operational | _Configurable_ (balanced to keep context focused) |
 
----
-
 ### What the Assistant **is not**
 
 - Doesn’t perform **strategic analysis** (Seer territory)
 - Doesn’t enforce **quality control** across threads (Supervisor job)
-
----
 
 ### Why Assistants matter
 
@@ -210,17 +192,13 @@ The responsible adult in the room, you can trust the Supervisor to keep an eye o
 - Ideal for **chat-based help**, **content generation**, **light coding**, and **research**
 - Provide the **versatile backbone** that lets Qui Studio scale: upstream roles guide strategy and quality, while Assistants execute quickly and delegate when depth is needed.
 
-# Seer
-
-### Seer — the **strategic brain** of Qui Studio
+# Seer— the **strategic brain**
 
 **Place in the hierarchy**
 
 - **Priority band:** **4.0 – 4.99** (highest operational tier)
 - Oversees Directors → Supervisors → Assistants → Executors
 - Acts as the **analytical anchor** for multi-agent workflows
-
----
 
 ### Signature capability — **Autothink Strategy System**
 
@@ -231,23 +209,17 @@ The responsible adult in the room, you can trust the Supervisor to keep an eye o
 | **Basic**    | Pattern recognition · Causal analysis · Scenario planning          | Spot trends, map cause-effect chains, model “what-ifs”             |
 | **Advanced** | Meta-cognitive reflection · Critical thinking · Strategy synthesis | Assess their own reasoning, challenge assumptions, combine tactics |
 
----
-
 ### Core responsibilities
 
 - **Strategic reasoning** — craft plans, diagnose complex problems, optimize workflows
 - **Deep analysis** — apply pattern recognition to streaming data, run decision-tree scenarios
 - **Workflow optimization** — reflect on outcomes, adjust prompts or parameters to improve overall system performance
 
----
-
 ### Technical privileges & tooling
 
 - **“🤔 AutoThink” tab** in the Character Modal — lets users pick any of the 14 strategies
 - **Autothink Instruction Builder & Processor** — generate dynamic, strategy-specific prompts on the fly
 - **Role-agnostic backend** — Seer logic plugs into the same infrastructure as other characters, but with elevated memory and UI rights
-
----
 
 ### Memory & context
 
@@ -258,14 +230,10 @@ The responsible adult in the room, you can trust the Supervisor to keep an eye o
 | **Read scope**        | All lower bands (Director, Supervisor, Assistant, Executor) |
 | **Write scope**       | High-priority “Seer Insights” band                          |
 
----
-
 ### What Seers **are not**
 
 - They **don’t** handle routine task execution — that’s for Assistants/Executors
 - They **don’t** modify low-level prompts unless it aligns with strategic goals; operational tuning is left to Directors/Supervisors
-
----
 
 ### Why Seers matter
 
@@ -273,7 +241,3 @@ The responsible adult in the room, you can trust the Supervisor to keep an eye o
 
 - Ideal for **complex decision trees, long-horizon planning, cross-department analytics**
 - Provide the **deep thinking layer** that keeps the entire MetaLayers ecosystem aligned with organizational objectives
-
-# New Role
-
-Adding your own role.....
