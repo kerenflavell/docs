@@ -1,12 +1,86 @@
 ---
 title: "Settings"
-description: "Description of your new file."
+description: "Quick reference to customizing agents"
 icon: "activity"
 ---
 
-- Instructions and Knowledge Base
-- Permissions and Control
-- Access
-  - Terminal access
-  - Internet access
-- Advanced prompts
+# Character Creation Settings
+
+#### 1 | Basic identity
+
+| Setting            | What it does                                                        |
+| :----------------- | :------------------------------------------------------------------ |
+| **Display name**   | Human-readable label shown in the UI                                |
+| **Character ID**   | Auto-generated unique key (internal)                                |
+| **Role**           | One of _Assistant · Executor · Supervisor · Director · Seer_        |
+| **Description**    | Personality, expertise, writing style                               |
+| **Favorite**       | Pin to top nav for quick launch                                     |
+| **Variable Store** | Toggle to auto-drop a _Variable Store_ node on the Autothink canvas |
+
+#### 2 | Provider & Model
+
+- **Provider:** OpenAI (🟢) or Anthropic (🟣)
+- **Model list:** Context-aware dropdown with token window \+ feature notes
+- **Runtime tweaks**
+  - _Context window_ (0 = use model default)
+  - _Max output tokens_ (0-4096, default 2048)
+  - _Temperature_ (0 = deterministic → 1 = creative; default 0 .7)
+  - _Top P_ (alternative diversity knob; default 1 .0)
+
+#### 3 | Functions
+
+| Tab                   | Purpose                                 | Highlights                                                                         |
+| :-------------------- | :-------------------------------------- | :--------------------------------------------------------------------------------- |
+| **📋 Instructions**   | Operating procedures & formatting rules | Drag-and-drop files ≤ 100 KB · syntax highlighting · auto-merge with system prompt |
+| **📚 Knowledge Base** | Domain facts & reference docs           | Auto-tagging · full-text search · shares same file support as Instructions         |
+
+#### 4 | Permissions & control
+
+🥇 MetaLayers roles
+
+| Role       | Memory read band |
+| :--------- | :--------------- |
+| Assistant  | 0.0 – 0.99       |
+| Supervisor | 0.0 – 1.79       |
+| Director   | 0.0 – 1.99       |
+| Seer       | 0.0 – 4.99       |
+
+_Extras_ — supervision list · prompt-editing rights · review interval scheduler
+
+🧠 Memory management
+
+- **Mode:** Long-term · Short-term · Hybrid
+- **Token budget:** default 3000
+- **Deep-memory settings:**
+  - Compress after _30_ mems → combine _6_ → keep _5_ summaries
+  - Cleanup \> 90 days
+- **Search:** natural-language \+ command syntax
+- **Visibility:** own · all · selected agents
+
+#### 5 | Access controls
+
+| Area            | Key toggles                        | Rate/limits                            |
+| :-------------- | :--------------------------------- | :------------------------------------- |
+| **💬 M2M**      | enable / initiate / be-target      | 10 msgs / 10 min · 1000 tokens each    |
+| **🖥 Terminal** | Strict · Read-only · Full          | Allowed command list · path sandbox    |
+| **🌐 Internet** | Off · Whitelist · Blacklist · Open | 1 – 1000 requests/session (default 50) |
+
+#### 6 | Advanced prompts & Seer extras
+
+- **System-prompt manager** — auto-creates & merges prompts for M2M, terminal, variable store, etc.
+- **🤔 Autothink (Seer only)**
+  - 14 strategies (7 basic · 7 advanced)
+  - Mix & match; UI suggests best set per use-case
+
+#### 7 | Workflow integrations
+
+| Feature              | What happens when enabled                                                    |
+| :------------------- | :--------------------------------------------------------------------------- |
+| **Variable Store**   | Auto-adds store nodes; shared vars across agents                             |
+| **Memory system**    | Priority-aware retrieval · @mention user-directed memories · LLM compression |
+| **Autothink canvas** | Character appears as agent node; strategies trigger automatically            |
+| **M2M in workflows** | Agents can @mention each other inside flow context                           |
+
+---
+
+> **Take-away:** every toggle is designed to mesh with the others, letting you craft agents that are powerful, safe, and perfectly scoped to your multi-agent workflow — from a lightweight Executor to a strategy-driven Seer.

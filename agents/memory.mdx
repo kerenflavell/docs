@@ -1,13 +1,60 @@
 ---
 title: "Memory Management"
-description: "Description of your new file."
+description: "How the history of activities are stored and retrieved"
 icon: "activity"
 ---
 
-- Short term
-- Long term
-- Memory limits
-- Deep memory
-- Priorities
-- Memory Cleanup
-- Memory Band Access
+### Memory Management in Qui Studio — the essentials
+
+#### 1. 10-point **priority ladder**
+
+| Band           | Typical contents                                  | Who can read it? |
+| :------------- | :------------------------------------------------ | :--------------- |
+| **0.0 – 0.99** | Assistant / Executor messages (priority 0.1–0.99) | Assistants ↑     |
+| **1.0 – 1.99** | User messages (default 1.2)                       | Supervisors ↑    |
+| **3.1 – 3.9**  | _Deep-memory summaries_ (auto-compressed)         | Directors ↑      |
+| **4.0 – 4.99** | Seer strategic insights                           | Seers            |
+| **5.0 – 10**   | Reserved for future / system use                  | —                |
+
+_Access ranges_
+
+- **Assistant:** 0.0 – 0.99
+- **Supervisor:** 0.0 – 1.79
+- **Director:** 0.0 – 1.99
+- **Seer:** 0.0 – 4.99
+
+#### 2. Automatic **deep-memory compression**
+
+1. When `current memories > max + combine_size` → trigger.
+2. Oldest memories are grouped → LLM summarises them.
+3. Summary saved in band **3.x**, originals deleted.
+4. Characters always keep _exactly_ **max regular** \+ **N summaries**.
+
+> **Result:** decades of history stay accessible without ballooning token budgets.
+
+#### 3. Hybrid memory layers
+
+- **Long-term store** (`character_memory` table)
+  - Facts, preferences, experiences (\+ confidence, priority, timestamps).
+- **Short-term buffer**
+  - Latest conversation snippets for continuity.
+- **Context manager**
+  - Deduplicates, merges, and trims to fit model token limits.
+
+#### 4. **User-directed** memories (`@Janette …`)
+
+- Special parser tags the message → saved as “MESSAGE FROM USER TO \<Character\>”.
+- Guarantees the addressed character recalls _exact_ user instructions without cluttering global history.
+
+#### 5. Why this matters
+
+| Benefit                | How it shows up for you                                                                          |
+| :--------------------- | :----------------------------------------------------------------------------------------------- |
+| **Persistent context** | Characters remember projects and preferences across sessions.                                    |
+| **Smart filtering**    | Only high-value memories stay top-of-mind; noise fades automatically.                            |
+| **Scalable knowledge** | Compression keeps years of chat history in a few rich summaries.                                 |
+| **Role-aligned views** | Each role sees just the context it needs — no overload, no leaks.                                |
+| **Instant search**     | Ask “What did we decide about React hooks?” → system retrieves the answer.                       |
+| **Team memory**        | Works seamlessly with M2M: each agent keeps its own perspective yet builds shared understanding. |
+
+> **Bottom line:** Qui Studio’s memory engine turns short-lived chats into a growing, curated knowledge base — lean, role-aware, and always ready for the next question.

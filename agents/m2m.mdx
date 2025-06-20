@@ -1,5 +1,53 @@
 ---
-title: "Model 2 Model Communication"
-description: "Description of your new file."
+title: "Model-2-Model Communication"
+description: "How agents can autonomously engage with each other"
 icon: "activity"
 ---
+
+# M2M Communication — Quick Overview
+
+**Core idea**
+
+- Characters talk to each other with simple `@CharacterName` mentions.
+- The mention triggers an immediate, structured message so the target can reply.
+- Result: natural multi-agent conversations that split work across specialist AIs.
+
+#### How it works under the hood
+
+**1. Mention detection**
+
+- Every message runs through `M2MResponseHandler`.
+- Regex `@[\w\-]+` finds mentions, then resolves them (case-insensitive) against active characters.
+
+**2. Message routing**
+
+- System wraps the content as
+
+  ```
+  MESSAGE FROM <SourceName>
+  <original text>
+  
+  ```
+
+  and delivers it via **WebSockets** for real-time exchange.
+
+**3. Safety & control**
+
+- **Rate-limit:** default 10 msgs / 10 min per character.
+- **Depth-limit:** chains stop after 3 hops to avoid loops.
+- **Permissions:** `can_initiate`, `can_be_target` flags; self-mentions are blocked.
+- **Kill-switch:** an emergency interrupt halts all M2M traffic in the session.
+
+#### Why M2M matters
+
+| Benefit                               | What it looks like in practice                                                                                                            |
+| :------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------- |
+| **Collaborative problem-solving**     | `@Researcher` gathers data → `@Analyst` interprets → `@Writer` drafts report — all without user micro-managing.                           |
+| **Dynamic, conversational workflows** | Characters decide _when_ and _who_ to pull in, adapting on the fly instead of following rigid pipelines.                                  |
+| **Role-based expertise integration**  | Assistants ping Supervisors for QA; Directors coordinate teams; Seers inject strategic guidance — each role stays within its permissions. |
+| **Transparent teamwork for users**    | Every cross-talk is visible, so users watch the “AI team” collaborate and can step in at any point.                                       |
+| **Scalable architecture**             | Add a new character and it’s instantly reachable by `@mention`; rate/permission guards keep scale from turning into chaos.                |
+
+---
+
+> **In short:** M2M turns isolated assistants into a coordinated **AI workforce**—powerful, flexible, and safe—using nothing more than conversational mentions.
