@@ -4,4 +4,90 @@ description: "Learn how to setup and manage automation workflows"
 icon: "activity"
 ---
 
-You can choose from present workflows that gives a quick start, and demonstrates positive examples of workflow design.
+# **AutoThink Canvas** — Beginner’s Guide
+
+### 1. What is AutoThink Canvas?
+
+A drag-and-drop **visual workflow builder** that lets you wire up multiple AI characters (Assistants, Supervisors, Seers, etc.) so they can collaborate, communicate, and solve complex tasks together.
+
+### 2. Getting started
+
+| Step              | Action                                                                                                                                              |
+| :---------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **1 Access**      | Open **Qui Studio** → click **AutoThink Canvas** in the sidebar.                                                                                    |
+| **2 Tour the UI** | **Canvas** (main workspace) · **Top toolbar** (connect & run) · **Side panel** (character list & settings) · **＋ Button** (add session characters). |
+
+### 3. Build your first workflow
+
+#### 3-a Add characters
+
+1. Hit **＋** → pick characters from your current chat.
+2. Each appears as a **node** with name, role badge, objective field and connection handles.
+
+#### 3-b Set objectives
+
+Click a node → fill the **Objective** box with a crisp instruction, e.g.
+
+- “Analyse the user’s prompt and list requirements.”
+- “Review the analysis for gaps.”
+
+#### 3-c Connect nodes
+
+| Connection                   | Use-case                    | How to draw                                         |
+| :--------------------------- | :-------------------------- | :-------------------------------------------------- |
+| **One-way A→B**              | Commands / reporting        | Drag **orange (output)** → **green (input)** handle |
+| **Two-way A↔B**              | Peer collaboration          | Join **purple** ↔ **purple** handles                |
+| **Monitor A↔(Supervisor)↔B** | Oversight with intervention | Use the **Monitor** link tool                       |
+| **Result A→Result**          | Collect final output        | Orange (out) → Result node                          |
+
+✔ Orange → Green  ✘ Orange → Orange  ✘ Green → Green
+
+**Delete a connector** by selecting it, then using the Bin icon to remove. it
+
+### 4. Quick patterns
+
+| Pattern                    | Sketch                                        | Description                        |
+| :------------------------- | :-------------------------------------------- | :--------------------------------- |
+| **Analysis pipeline**      | Analyst → Reviewer → Decision Maker           | Straight one-way chain.            |
+| **Collaborative research** | Researcher A ↔ Researcher B → Result          | Two-way brainstorm, single output. |
+| **Monitored discussion**   | Expert A ↔ **Supervisor** ↔ Expert B → Report | Supervisor steps in if needed.     |
+
+### 5. Advanced features to explore
+
+- **Role power-ups** \
+  • _Seer_ → 14 thinking strategies, full memory • _Director_ → cross-team control • _Executor_ → niche task bursts
+- **Memory integration** — characters recall past chats, stored docs, cross-session facts.
+- **Terminal access** — enable for code execution and system tasks.
+
+### 6. Running a workflow
+
+1. **Prep input** and verify connections.
+2. Hit **Run**.
+3. Watch nodes exchange `@mentions` in real time.
+4. Observer/Monitor nodes can pause, escalate, or stop loops.
+5. Final answers land in **Result** nodes.
+
+### 7. Best-practice cheat-sheet
+
+| Tip                           | Why it helps                                    |
+| :---------------------------- | :---------------------------------------------- |
+| **Start with 2-3 nodes**      | Easier to debug.                                |
+| **Write specific objectives** | “Analyse sales data” \> “Look at data”.         |
+| **Use the right link type**   | One-way for pipelines, two-way for co-creation. |
+| **Add Result nodes early**    | Keeps outputs tidy.                             |
+
+### 8. Troubleshooting
+
+| Symptom           | Fix                                      |
+| :---------------- | :--------------------------------------- |
+| Nodes stay silent | Check handle colours & direction.        |
+| Infinite loop     | Add Monitor; set message limits.         |
+| Messy output      | Refine objectives; insert Reviewer node. |
+
+### 9. Next steps
+
+- Drop in **Filter, Timer, Decision, Loop** nodes for richer logic.
+- Save good setups as **templates** for reuse.
+- Combine with **Seer strategies** for deep reasoning.
+
+> **Remember:** start simple, iterate often, and let AutoThink Canvas turn complex AI coordination into an intuitive visual flow.

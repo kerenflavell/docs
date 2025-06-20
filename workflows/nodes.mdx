@@ -1,61 +1,34 @@
 ---
 title: "Orchestration Nodes"
-description: "The options to instruct the process of the workflow"
+description: "How to instruct and control the workflow process "
 icon: "activity"
 ---
 
-# Start Node
+# Key Workflow Nodes in Qui Studio
 
-- Settings to begin a new automation
-- Start configuration
+| Node                   | What it does                                                  | Key options / safeguards                                                                                                                                                |
+| :--------------------- | :------------------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Start**              | Entry-point that seeds the first context and fires the chain. | Output-only; legacy 619-line block.                                                                                                                                     |
+| **Loop**               | Re-runs a branch.                                             | • **Count**: 1-100 × • **Condition**: AI exit test• **Data-driven**: iterate a list• **Improve-until**: quality ≥ X— Max-iter, timeout, resource watch, emergency stop. |
+| **Connection Monitor** | Oversees agent-to-agent chatter.                              | Observer handle, live metrics, loop detection, auto-escalate up the hierarchy, warning thresholds.                                                                      |
+| **Strategy Sequencer** | Picks one of 14 thinking strategies each pass.                | Dynamic switching \+ role-based defaults.                                                                                                                               |
+| **Variable Store**     | Holds workflow state.                                         | Scoped vars, auto-cleanup, cross-node sharing.                                                                                                                          |
+| **Knowledge**          | Injects docs into context.                                    | Drag-and-drop files (code, docs, media) → searchable knowledge base.                                                                                                    |
+| **Decision**           | Branches on a condition.                                      | Pattern / number / logic / AI test, conf-threshold, multiple exits.                                                                                                     |
+| **Filter**             | Screens data down the line.                                   | Keyword, regex, sentiment, semantic relevance, stats outlier tests.                                                                                                     |
+| **Timer**              | Delays or schedules work.                                     | Simple delay, cron, rate-limit, TZ aware, business-day, pause/resume.                                                                                                   |
+| **Hub**                | Fan-out / load-balance switchboard.                           | Configurable in/out slots, intelligent routing.                                                                                                                         |
+| **Queue**              | Buffers messages FIFO / LIFO.                                 | Batch size, overflow rules, priority lanes.                                                                                                                             |
+| **Router (Message)**   | Content-based distributor.                                    | 3 main ins \+ 4 small M2M ins; routes by content, sender or rule-set.                                                                                                   |
+| **Observer handle**    | Passive tap on most nodes.                                    | Threshold alerts, escalate or intervene without blocking flow.                                                                                                          |
+| **Result**             | Read-only sink for outputs.                                   | Aggregates, formats, attributes sources, builds final report.                                                                                                           |
+| **Screen**             | (Built into Result) Visual preview / display pane.            | —                                                                                                                                                                       |
 
-# Loop node
+#### Architecture highlights
 
-- Purpose and value
-- Max Loops and Timeout
-- Instructions
-- Scroll to add participants
-  - Not possible to add
+- **Handles:** input ▸, output ◂, bidirectional ↔, observer 👁️ — 14 px grab-points with live validation.
+- **M2M-ready:** every node can pass messages that respect role permissions.
+- **MetaLayers-aware:** node behaviour and memory access automatically adapt to the character roles (Assistant → Seer).
+- **Modular:** \> 15 node types, each pluggable for custom extensions.
 
-# Monitor node
-
-- Maximum messages
-- Intervene settings
-- Prompt inject
-
-
-- Text
-  - Show the output from autothink between characters
-  - Copy
-- Strategy Sequencer
-  - Per iteration strategy
-  - Multi-iteration AI execution (verified up to 10 steps)
-  - 
-- Variable Store
-  - Workflow state management
-  - 
-- Knowledge Node
-  - Adding more specialist information
-  - Vector search
-- Decision
-  - Connect the Evaluator
-  - Conditional logic and branching
-  - 
-- Filter
-  - AI-powered content filtering
-- Timer
-  - Advanced workflow control
-- Hub
-  - Direction
-  - Direction Mode
-  - Slot Management
-- Add
-  - Add Configuration
-- Message Queue
-  - Overflow action
-- Message Router
-  - Observer Agent
-- Result Node
-  - Where you get the results
-- Screen Node
-  - Displays live results
+> **Bottom line:** these nodes let you build anything from a simple request-response chain to a fully supervised, multi-agent, strategy-driven workflow—without losing control over loops, quality, or resources.

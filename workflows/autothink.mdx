@@ -1,4 +1,99 @@
 ---
 title: "AutoThink Strategies"
-description: "Description of your new file."
+description: "Multi layer approach to customize the automation logic"
 ---
+
+# Complete System Guide
+
+### The 7 × 7 Strategy Framework
+
+| Level          | #  | Strategy                | Core moves                                  |
+| :------------- | :-- | :---------------------- | :------------------------------------------ |
+| **Foundation** | 1  | **Deductive**           | General rule → specific case                |
+|                | 2  | **Inductive**           | Specifics → general rule                    |
+|                | 3  | **Analytical**          | Decompose • inspect • recombine             |
+|                | 4  | **Sequential**          | Ordered, step-by-step logic                 |
+|                | 5  | **Comparative**         | Contrast options • rank winners             |
+|                | 6  | **Reflective**          | Learn from past • iterate                   |
+|                | 7  | **Synthesis**           | Merge ideas → unified insight               |
+| **Advanced**   | 8  | **Critical**            | Challenge assumptions • spot flaws          |
+|                | 9  | **Systematic**          | Apply formal frameworks end-to-end          |
+|                | 10 | **Contextual**          | Adapt to environment & constraints          |
+|                | 11 | **Pattern Recognition** | Detect recurring themes • predict           |
+|                | 12 | **Causal Analysis**     | Trace root causes • correlation ≠ causation |
+|                | 13 | **Scenario Planning**   | Map futures • build contingencies           |
+|                | 14 | **Meta-Cognitive**      | Reflect on, and adjust, own thinking        |
+
+### Strategy Sequencer — per-iteration thinking control
+
+```
+🎭  Strategy Sequencer
+Connected agent: Expert Analyst   •   Iterations: 5
+───────────────────────────────────────────────
+Iteration 1 → Analytical
+Iteration 2 → Deductive
+Iteration 3 → Reflective
+Iteration 4 → Pattern Recognition
+Iteration 5 → Meta-Cognitive
+```
+
+**Setup**
+
+1. Drag the **Strategy Sequencer** node onto AutoThink Canvas.
+2. Connect its output to an agent node.
+3. Sequencer detects the agent’s iteration count automatically.
+4. Choose a strategy for each iteration.
+5. Run the workflow.
+
+#### Sample patterns
+
+| Pattern                      | Iteration 1 | 2           | 3            | 4              | 5         |
+| :--------------------------- | :---------- | :---------- | :----------- | :------------- | :-------- |
+| **Analytical Deep-Dive**     | Analytical  | Deductive   | Critical     | Reflective     | Synthesis |
+| **Creative Exploration**     | Inductive   | Comparative | Scenario     | Meta-Cognitive | Synthesis |
+| **Systematic Investigation** | Systematic  | Analytical  | Pattern Rec. | Causal         | Critical  |
+
+### Seer Integration
+
+- **Character level** – Pick multiple strategies in the **🤔 Autothink** tab.
+- **Node level** – Seer nodes have a single-strategy dropdown (overrides character defaults).
+- **Iteration level** – Sequencer choices override both for the finest control.
+
+**Priority order:** Sequencer → Node dropdown → Character config → Role defaults.
+
+### Implement in a Workflow
+
+1. Create a Seer, selecting base strategies in the character modal.
+2. Drop the Seer node onto Canvas; optionally override strategy via node dropdown.
+3. Add a Strategy Sequencer; wire it to the Seer; assign per-iteration strategies.
+4. Run and watch logs to see which strategy fires on each loop.
+
+### Best-Practice Cheat-Sheet
+
+| Task type    | Early                    | Middle                   | Final                     |
+| :----------- | :----------------------- | :----------------------- | :------------------------ |
+| **Research** | Analytical / Systematic  | Pattern Rec. / Inductive | Synthesis / Critical      |
+| **Decision** | Comparative / Contextual | Scenario / Causal        | Meta-Cognitive / Critical |
+| **Creative** | Inductive / Reflective   | Comparative / Synthesis  | Meta-Cognitive / Critical |
+
+**Sequencer tips**
+
+- Start **simple → complex** (basic then advanced).
+- Go **broad → narrow** (Systematic then Analytical).
+- Use **explore → validate** (creative then critical).
+- Document successful combos for reuse.
+
+### Architecture Snapshot
+
+| Layer     | Service                         | Role                                         |
+| :-------- | :------------------------------ | :------------------------------------------- |
+| Backend   | **AutothinkStrategyService**    | Validates & recommends strategies            |
+|           | **StrategySequencerService**    | Injects per-iteration strategies at runtime  |
+|           | **AutothinkInstructionBuilder** | Merges goals \+ strategy prompts             |
+| Front-end | **Character Modal**             | Strategy picker for Seer roles               |
+|           | **Canvas Node UI**              | Node-level strategy dropdown                 |
+|           | **Sequencer UI**                | Iteration-by-iteration list with live counts |
+
+---
+
+> **Summary:** The AutoThink Strategy system in **Qui Studio** lets you choose _how_ each agent thinks, and with the Strategy Sequencer you can change that thinking **every iteration**, giving you granular, adaptable control over multi-agent reasoning.

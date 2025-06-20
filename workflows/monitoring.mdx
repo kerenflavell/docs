@@ -1,17 +1,83 @@
 ---
-title: "Monitoring"
+title: "Monitoring  "
 description: "Oversight mechanism for review and control of workflows"
 icon: "activity"
 ---
 
-# Chat area
+# Qui Studio Control Tools — Complete Guide
 
-You can view discussions in the Chat Area.
+### 1 Why it matters
 
-# Screen
+Real-time dashboards, interrupt buttons, and oversight nodes give you **full visibility and instant control** over every character, message, and resource in a running workflow.
 
-The Screen node gives you a window into the work.
+### 2 On-canvas displays
 
-# Text
+| Node        | Purpose                                          | Live cues                                                                             |
+| :---------- | :----------------------------------------------- | :------------------------------------------------------------------------------------ |
+| **Screen**  | Stream workflow output as it happens             | **Green border** = receiving · **Blue** = waiting · **Gray** = idle · **Red** = error |
+| **Display** | Static/dynamic text window for any node’s output | Copy-to-clipboard · resizable · switches to read-only when fed input                  |
 
-The Text node shows the desired output.
+_Tip:_ Add a Screen node, connect any character’s orange ▸ handle to its green ◂ handle, then watch results scroll in real time (auto-scroll, save, clear).
+
+### 3 Chat-window controls
+
+| Control            | What it does                                        |
+| :----------------- | :-------------------------------------------------- |
+| **Thread picker**  | Multiple conversations per session, drag to reorder |
+| **Stop button**    | Interrupt generation instantly                      |
+| **Model switcher** | Change or route messages to different LLMs mid-chat |
+| **File upload**    | Drag-and-drop docs, images, code into the thread    |
+
+Advanced
+
+- **Batch send** (same message to many characters)
+- **Priority flag** (urgent messages jump the queue)
+
+### 4 Dashboards & monitors
+
+#### System status panel
+
+- **Connection health:** running / paused / blocked monitors
+- **Resources:** RAM, CPU, open files, disk, network I/O
+- **Performance:** msg / sec, latency, queue depth, error rate
+
+#### Canvas live view
+
+- **Node badges:** Green pulse = active, Blue = waiting, Orange flash = sending, Red = error, Gray = idle
+- **Progress bar** & completion % per workflow
+
+#### Connection Monitor
+
+Tracks every `@mention`:
+
+- Loop detection & auto-break
+- Escalates to higher-role characters when thresholds hit
+- Quality metrics on inter-agent dialogue
+
+### 5 Control levers
+
+| Layer        | Key buttons                                                        |
+| :----------- | :----------------------------------------------------------------- |
+| **Workflow** | Start · Pause · Resume · Cancel · Step-through                     |
+| **Node**     | Start/Stop this node · Edit objective on the fly · Reroute outputs |
+| **Chat**     | Stop generation · Edit & retry message · Branch thread             |
+| **Session**  | Reset session · Switch models · Emergency Stop (global)            |
+
+### 6 Safety & security
+
+- **Terminal guard:** Strict / Read-only / Full, command allow / block lists, path sandbox, real-time kill.
+- **Memory guard:** Band-based access, manual compression trigger, priority tweak, cleanup old memories.
+- **Resource limits:** Automatic CPU/RAM caps, WebSocket heartbeat, graceful fallback.
+
+### 7 Best-practice checklist
+
+| Do                                                        | Why                                                 |
+| :-------------------------------------------------------- | :-------------------------------------------------- |
+| **Start at 30 000 ft** — watch the system dashboard first | Spot global bottlenecks before diving into nodes    |
+| **Set sensible thresholds**                               | Too low → micromanagement, too high → runaway loops |
+| **Document interventions**                                | Builds a playbook; lets you tune thresholds later   |
+| **Know the red button**                                   | Emergency Stop halts every agent in milliseconds    |
+
+---
+
+> **Bottom line:** With Qui Studio’s monitoring & control suite you can **see, pause, tweak, or stop** any part of your multi-agent workflow the moment something drifts—keeping complex AI operations safe, efficient, and transparent.
